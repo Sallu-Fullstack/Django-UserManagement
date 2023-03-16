@@ -1,0 +1,14 @@
+.navbar-brand {
+    font-family: bradley hand, cursive;
+  }
+  
+  .form-group {
+    align-items: center;
+    padding-left: 5%;
+  }
+  
+  .btn-right {
+    margin-left: 5%;
+    display: block;
+  }
+  

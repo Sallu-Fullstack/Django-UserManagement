@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{% for user in users %}
+    <div>
+        <p>Email: {{ user.email }}</p>
+        <p>Username: {{ user.username }}</p>
+        <p>Password: {{ user.password }}</p>
+    </div>
+{% endfor %}
+
+{% endblock content %}
