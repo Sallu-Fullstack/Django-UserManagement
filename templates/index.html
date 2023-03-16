@@ -1,104 +1,34 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Bootswatch: Quartz</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23019901-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-23019901-1');
-    </script>
-  </head>
-  <body>
+{% block content %}
+<div class="row">
+  <div class="col-lg-6">
     <div class="bs-component">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">DJANGO FORMs</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarColor01">
-              <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Home
-                    <span class="visually-hidden">(current)</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                  </div>
-                </li>
-              </ul>
-              <form class="d-flex">
-                <input class="form-control me-sm-2" type="search" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-              </form>
-            </div>
+      <form method="POST" action="{% url 'create_form' %}">
+        {% csrf_token %}
+        <fieldset>
+          <div class="form-group">
+            <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" value="{{email}}" name="inemail" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
           </div>
-        </nav>
+          <div class="form-group">
+            <label for="exampleInputUsername" class="form-label mt-4">Username</label>
+            <input type="text" name="inusername" value="{{username}}" class="form-control" id="exampleInputUsername" placeholder="Enter Username">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+            <input type="password" name="inpassword1" value="{{password}}" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group">
+              <label for="exampleInputPassword2" class="form-label mt-4">Confirm Password</label>
+              <input type="password" name="inpassword2" class="form-control" id="exampleInputPassword2" placeholder="Password (Confirm)">
+            </div>
+          </fieldset>
+      </br>
+      <button type="submit" class="btn btn-primary btn-right">Submit</button>
+  </form>
       </div>
-
-      {% block content %}{% endblock content %}
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="bs-component">
-                <form method="POST" action="{% url 'create_form' %}">
-                  {% csrf_token %}
-                  <fieldset>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" name="inemail" aria-describedby="emailHelp" placeholder="Enter email">
-                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputUsername" class="form-label mt-4">Username</label>
-                      <input type="text" name="inusername" class="form-control" id="exampleInputUsername" placeholder="Enter Username">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
-                      <input type="password" name="inpassword1" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword2" class="form-label mt-4">Confirm Password</label>
-                        <input type="password" name="inpassword2" class="form-control" id="exampleInputPassword2" placeholder="Password (Confirm)">
-                      </div>
-                    </fieldset>
-                </br>
-                <button type="submit" class="btn btn-primary btn-right">Submit</button>
-            </form>
-                </div>
-                </div>
-                </div>
-  
-                
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
-</body>
-</html>
+      </div>
+      </div>
+{% endblock content %}
