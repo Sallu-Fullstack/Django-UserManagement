@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-6">
+      <div class="bs-component">
+        <form method="POST" action="{% url 'edit_user' user.id %}">
+          {% csrf_token %}
+          <fieldset>
+            {% if request.session.email %}
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" value="{{request.session.email}}" name="inemail" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputUsername" class="form-label mt-4">Username</label>
+              <input type="text" name="inusername" value="{{request.session.username}}" class="form-control" id="exampleInputUsername" placeholder="Enter Username">
+            </div>
+            {% else %}
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" name="inemail" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputUsername" class="form-label mt-4">Username</label>
+              <input type="text" name="inusername" class="form-control" id="exampleInputUsername" placeholder="Enter Username">
+            </div>
+            {% endif %}
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+              <input type="password" name="inpassword1" value="{{password}}" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword2" class="form-label mt-4">Confirm Password</label>
+                <input type="password" name="inpassword2" class="form-control" id="exampleInputPassword2" placeholder="Password (Confirm)">
+              </div>
+            </fieldset>
+        </br>
+        <button type="submit" class="btn btn-primary btn-right">Submit</button>
+    </form>
+        </div>
+        </div>
+        </div>
+
+{% endblock content %}

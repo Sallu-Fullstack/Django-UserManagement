@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Email Id</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Password</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if users %}
+      {% for user in users %}
+      <tr class="table-active">
+        <form action="{% url 'edit_user' user.id %}" method="POST">
+            {% csrf_token %}
+        <th scope="row">{{user.user_id}}</th>
+        <td>{{user.email}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.password}}</td>
+        <td><button type="submit" class="btn btn-success">Edit</button></td>
+    </form>
+    <form action="{% url 'delete_user' user.id %}" method="POST">
+        {% csrf_token %}
+        <td><button type="submit" class="btn btn-danger">Delete</button></td>
+    </form>
+      </tr>
+      {% endfor %}
+      {% else %}
+      {% if user %}
+      <tr class="table-active">
+        <form action="{% url 'edit_user' user.id %}" method="POST">
+            {% csrf_token %}
+        <th scope="row">{{user.user_id}}</th>
+        <td>{{user.email}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.password}}</td>
+        <td><button type="submit" class="btn btn-success">Edit</button></td>
+    </form>
+    <form action="{% url 'delete_user' user.id %}" method="POST">
+        {% csrf_token %}
+        <td><button type="submit" class="btn btn-danger">Delete</button></td>
+    </form>
+      </tr>
+      {% endif %}
+      {% endif %}
+    </tbody>
+  </table>
+{% endblock content %}

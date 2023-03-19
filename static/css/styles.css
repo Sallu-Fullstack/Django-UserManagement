@@ -11,4 +11,17 @@
     margin-left: 5%;
     display: block;
   }
+
+  .btn-logout{
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: -10%;
+    display: block;
+  }
+
+  .bi {
+    font-size: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
   
