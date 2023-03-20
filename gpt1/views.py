@@ -61,7 +61,7 @@ def show_users(request):
         return render(request, "users.html", {"users": users})
     else:
         messages.error(request, "You are not Logged In")
-        return redirect('login')
+        return redirect('index')
 
 def logout(request):
         if 'email' in request.session:
@@ -72,7 +72,7 @@ def logout(request):
             del request.session['username']
             del request.session['password']
         messages.error(request, "Logged Out Successfully, Login to view Users")
-        return redirect('login')
+        return redirect('index')
 
 def edit_user(request, user_id):
     user = User.objects.get(id=user_id)
@@ -116,7 +116,7 @@ def login(request):
             messages.success(request, f'Welcome {username}, You have Logged in Successfully')
             return redirect("show_users")
 
-    return render(request, "login.html")
+    return render(request, "index.html")
 
 def search_username(request):
     if request.method == 'POST':
@@ -131,3 +131,4 @@ def search_username(request):
         except ObjectDoesNotExist:
             messages.error(request, 'Username Doesn\'t exists')
             return redirect('show_users')
+

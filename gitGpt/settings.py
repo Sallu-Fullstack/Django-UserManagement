@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-7_yw@xd6$%!%b!q5*=y9=u$t_vie890qt+linc^%=3a++#9kwk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'sallu2usermanage.pythonanywhere.com']
 
 
 # Application definition
@@ -120,11 +120,14 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
+# In Pythonanywhere settings.py file 'static' file is to be
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
+# Then make its directory to copy all static files in it give this command (mkdir staticfiles)
