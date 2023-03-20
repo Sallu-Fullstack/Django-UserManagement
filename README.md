@@ -19,6 +19,7 @@ This is a simple Django project that demonstrates how to create a web form using
 5. Install the project dependencies using the following command:
   **pip install -r requirements.txt**
 6. Run database migration to create the necessary database tables using the following command:
+  **python manage.py makemigrations**
   **python manage.py migrate**
 7. Start the development server using the following command:
   **python manage.py runserver**
