@@ -1,8 +1,8 @@
 # Django Form
 ### 👋 Welcome to the Django Form project repository!
-🎉 This project is built on Django framework which is used for creating a signup and login form. In this project, users can create an account and log in to view all users' details. Users can also search for a specific user by entering their username in the search bar.
+This project is built on Django framework which is used for creating a signup and login form. In this project, users can create an account and log in to view all users' details. Users can also search for a specific user by entering their username in the search bar.
 
-# View Live Project Here:
+# 🎉View Live Project Here:
 **Link: http://sallu2usermanage.pythonanywhere.com/**
 
 # Features
