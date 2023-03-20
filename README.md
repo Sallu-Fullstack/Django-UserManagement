@@ -1,16 +1,25 @@
 # Django Form
-### 👋 Welcome to the Django Form project!
-This is a simple Django project that demonstrates how to create a web form using Django's built-in forms module. It also showcases the use of Bootstrap for styling the form.
+### 👋 Welcome to the Django Form project repository!
+🎉 This project is built on Django framework which is used for creating a signup and login form. In this project, users can create an account and log in to view all users' details. Users can also search for a specific user by entering their username in the search bar.
+
+# View Live Project Here:
+**Link: http://sallu2usermanage.pythonanywhere.com/**
 
 # Features
 ### 🚀 Here are some of the key features of this project:
-* A simple web form with fields for name, email, and message.
-* The form includes validation of form data and displays error messages when fields are not filled in correctly.
-* The form uses Bootstrap for styling, with custom CSS to adjust the appearance of the form.
+* **User Signup:** Users can create their own account by filling out the form with their email, username, and password. The system will check if the email and username already exist in the database before creating the account.
+* **User Login:** Users can log in to view all users' details.
+* **User Details:** After logging in, users can view all users' details including their email, username, and id.
+* **User Search:** Users can search for a specific user by entering their username in the search bar.
+* **User Edit:** Users can edit their details by clicking the edit button and entering the new details.
+* **User Delete:** Users can delete their details by clicking the delete button.
+* **Session timeout:** The session is set to expire in 5 minutes to ensure the user's security.
+* **validation:** The form includes validation of form data and displays error messages when fields are not filled in correctly.
+* **Bootstrap:** The form uses Bootstrap for styling, with custom CSS to adjust the appearance of the form.
 
 # Setup Instructions
 ### 🛠️ Follow the steps below to set up this project on your local machine:
-1. Clone this repository to your local machine using Git or download the ZIP file.
+1. Clone this repository to your local machine using Git or download the ZIP file: **git clone https://github.com/Sallu-Fullstack/Django-form.git**
 2. Navigate to the project directory using the command line.
 3. Create a virtual environment for the project using the following command:
   **python -m venv myenv**
