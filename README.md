@@ -1,4 +1,10 @@
 # Django Form
+
+<div align="center">
+  <img src="user_mng1.png" alt="Image 1" width="400" height="300"/>
+  <img src="user_mng2.png" alt="Image 2" width="400" height="300"/>
+</div>
+
 ### 👋 Welcome to the Django Form project - repository!
 This project is built on Django framework which is used for creating a signup and login form. In this project, users can create an account and log in to view all users' details. Users can also search for a specific user by entering their username in the search bar.
 
