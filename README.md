@@ -1,7 +1,7 @@
 # Django Form
 
 <div align="center">
-  <img src="user_mng1.png" alt="Image 1" width="400" height="300"/>
+  <img src="user_mng1.png" alt="Image 1" width="300" height="300"/>
   <img src="user_mng2.png" alt="Image 2" width="500" height="300"/>
 </div>
 
